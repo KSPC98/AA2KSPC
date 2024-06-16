@@ -1,0 +1,28 @@
+#LLAMAMOS A LAS FUNCIONES DEL SISTEMA OPERATIVO
+import os
+
+#DEFINIMOS FUNCION PARA LIMPIAR LA PANTALLA
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+clear_screen()
+
+#INGRESAR PALABRA A ADIVINAR
+palabra= input("INGRESE PALABRA A SER ADIVINADA: " )
+clear_screen ()
+
+#TRANSFORMAR PALABRA A GUION
+oculta= ['_'] * len(palabra)
+print("La palabra a adivinar es: ", " ".join(oculta))
+print()
+
+#INTRODUCIR UNA LETRA
+letra= input("Introduzca una letra: ")
+
+#VERIFICAR SI LA LETRA ESTA EN LA PALABRA A ADIVINAR
+if letra in palabra:
+    print(f"La letra '{letra}' está en la palabra secreta")
+else:
+    print(f"La letra '{letra}' no está en la palabra secreta.")
+
+print("¡¡¡Gracias por jugar al Ahorcado!!!")
